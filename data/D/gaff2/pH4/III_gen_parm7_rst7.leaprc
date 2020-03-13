@@ -1,0 +1,12 @@
+# AMBER FF
+source leaprc.gaff2
+source leaprc.water.tip3p
+# Additional parameters
+loadamberparams ade_D_ala.frcmod
+# Acutally load, solvate and save the parm7 and rst7
+test = loadmol2 ade_D_ala_prep.mol2
+solvateoct test TIP3PBOX 12 iso 0.75
+#addions test Na+ 0
+saveamberparm test ade_D_ala.parm7 ade_D_ala.min0.rst7
+quit
+
